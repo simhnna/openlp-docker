@@ -7,13 +7,16 @@ It can also be used to run the test if you can't do that on your local machine.
 
 There currently are five images:
 
-Tag | System | Information
---- | ------ | -----------
-`debian-stable` | Resembles the current debian release | Currently can't run the tests in trunk
-`debian-testing` | Resembles the upcoming debian release |
-`ubuntu` | Resembles the latest ubuntu release | The tests should always pass here
-`ubuntu-lts` | Resembles the latest ubuntu lts release | Currently the same as the `ubuntu` image
-`ubuntu-devel` | Resembles the upcoming ubuntu release |
+Tag | System | Python version | Information
+--- | ------ | -------------- | -----------
+`debian-stable` | Debian stable (stretch) | 3.5.x | Currently can't run the tests in trunk
+`debian-testing` | Debian testing | 3.6.x |
+`ubuntu` | The latest ubuntu release | 3.6.x | The tests should always pass here
+`ubuntu-lts` | The latest ubuntu lts release | 3.6.x | Currently the same as the `ubuntu` image
+`ubuntu-devel` | The upcoming ubuntu release | 3.6.x |
+`fedora-28` | Fedora 28 | 3.5.x |
+`fedora-29` | Upcoming release of Fedora 29| 3.7.x |
+`archlinux` | Archlinux (rolling) | 3.7.x |
 
 You can grab the images by pulling `docker pull simhnna/openlp:<TAG>`.
 If you don't specify a Tag, you will get the `ubuntu` image.
