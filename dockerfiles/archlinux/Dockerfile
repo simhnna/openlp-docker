@@ -7,6 +7,6 @@ RUN pacman -Syyu --noconfirm git python-chardet python-lxml \
         python-waitress python-alembic bzr python-pip \
         python-webob mediainfo python-pytest python-dbus \
         python-pyqt5 xorg-server-xvfb python-requests python-qtawesome \
-        qt5-webkit qt5-multimedia
+        python-zeroconf qt5-webkit qt5-multimedia
 
 RUN pip install websockets
