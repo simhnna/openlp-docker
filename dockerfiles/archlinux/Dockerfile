@@ -1,4 +1,4 @@
-From base/archlinux
+From archlinux/base
 ENV LANG C.UTF-8
 
 
