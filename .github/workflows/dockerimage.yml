@@ -1,0 +1,16 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tag: ["archlinux", "debian-stable", "debian-testing", "fedora-28", "fedora-29", "ubuntu-devel", "ubuntu-lts"]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build ./dockerfiles/${{ matrix.tag }} --file Dockerfile --tag simhnna/openlp:${{matrix.tag }}
