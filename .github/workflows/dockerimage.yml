@@ -13,5 +13,12 @@ jobs:
         tag: ["archlinux", "debian-stable", "debian-testing", "fedora-28", "fedora-29", "ubuntu-devel", "ubuntu-lts"]
     steps:
     - uses: actions/checkout@v1
+    - name: Auth with docher hub
+      run: echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin
+      env:
+        INPUT_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        INPUT_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
       run: docker build . --file ./dockerfiles/${{ matrix.tag }}/Dockerfile --tag simhnna/openlp:${{matrix.tag }}
+    - name: Push image
+      run: docker push simhnna/openlp:${{matrix.tag}}
