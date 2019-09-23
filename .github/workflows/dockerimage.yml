@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build ./dockerfiles/${{ matrix.tag }} --file Dockerfile --tag simhnna/openlp:${{matrix.tag }}
+      run: docker build . --file ./dockerfiles/${{ matrix.tag }}/Dockerfile --tag simhnna/openlp:${{matrix.tag }}
