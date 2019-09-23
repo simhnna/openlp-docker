@@ -13,12 +13,6 @@ jobs:
         tag: ["archlinux", "debian-stable", "debian-testing", "fedora-28", "fedora-29", "ubuntu-devel", "ubuntu-lts"]
     steps:
     - uses: actions/checkout@v1
-    - name: Test
-      run: echo ${{secrets.FOO}}
-    - name: Test2
-      run: echo ${MEH}
-      env:
-        MEH: ${{ secrets.FOO }}
     - name: Auth with docher hub
       run: echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin
       env:
